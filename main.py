@@ -66,7 +66,7 @@ def cmd():
         for i in range(len(data)):
             position = f"{i+1}.0"
             pos+=1
-            text.insert(index=position,chars=f"{data[i]}\n")
+            text.insert(index=position,chars=f"{i+1}. {data[i]}\n\n")
             
             writer.writerow([names[i],prices[i],amount[i]])
         text.insert(index=f"{pos+1}.0",chars=f"Total : {total}")

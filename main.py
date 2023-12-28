@@ -13,7 +13,7 @@ userVar = tkinter.StringVar()
 win.grid_columnconfigure(0, weight=1)
 win.grid_rowconfigure(0, weight=1)
 
-text = tkinter.Text(win,height=200)
+text = tkinter.Text(win,height=200,spacing3=10)
 scrollbar = ttk.Scrollbar(win,orient='vertical',command=text.yview)
 
 
@@ -62,11 +62,11 @@ def cmd():
         writer.writerow(['Name','Price','Amount'])
 
         pos = 1
-
         for i in range(len(data)):
-            position = f"{i+1}.0"
+            position = f"{i}.0"
             pos+=1
-            text.insert(index=position,chars=f"{i+1}. {data[i]}\n\n")
+            text.insert(index=position,chars=f"{i+1}. {data[i]}\n")
+
             
             writer.writerow([names[i],prices[i],amount[i]])
         text.insert(index=f"{pos+1}.0",chars=f"Total : {total}")
